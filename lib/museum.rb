@@ -20,4 +20,21 @@ class Museum
   def admit(patron)
     @patrons << patron
   end
+
+  def patrons_by_exhibit_interest
+    exhibit_interests = Hash.new
+    @exhibits.each do |exhibit|
+      @patrons.each do |patron|
+        if !exhibit_interests.key?(exhibit) &&
+          patron.interests.include?(exhibit.name)
+          exhibit_interests[exhibit] = [patron]
+        elsif patron.interests.include?(exhibit.name)
+          exhibit_interests[exhibit] << patron
+        elsif !exhibit_interests.include?(exhibit)
+          exhibit_interests[exhibit] = []
+        end
+      end
+    end
+    exhibit_interests
+  end
 end
