@@ -129,6 +129,8 @@ class Test < Minitest::Test
     dmns.admit(patron_2)
     dmns.admit(patron_3)
 
-    assert_equal [patron_1, patron_3], dmns.ticket_lottery_contestants(dead_sea_scrolls)
+    expected = [patron_1, paron3]
+
+    assert_equal expected, dmns.ticket_lottery_contestants(dead_sea_scrolls)
   end
 end
