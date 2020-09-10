@@ -77,7 +77,6 @@ class Test < Minitest::Test
   end
 
   def test_patrons_by_exhibit_interests
-    skip
     dmns = Museum.new("Denver Museum of Nature and Science")
     gems_and_minerals = Exhibit.new({name: "Gems and Minerals", cost: 0})
     dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
